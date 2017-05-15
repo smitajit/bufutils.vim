@@ -1,4 +1,4 @@
-function! WipeOut()
+fun!  sutility#CloseAll()
 	pclose
 	lclose
 	helpclose
