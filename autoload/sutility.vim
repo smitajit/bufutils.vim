@@ -1,1 +1,1 @@
-:command SCloseAll call sutility#CloseAll() 
+:command SCloseAll call sutility#CloseAll()
