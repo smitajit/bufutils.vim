@@ -1,0 +1,5 @@
+:command BClosePreviews call sutility#BClosePreviews() 
+:command BCloseAll call sutility#BCloseAll() 
+:command BCloseOther call sutility#BCloseOther()
+:command BCloseLeft call sutility#BCloseLeft()
+:command BCloseRight call sutility#BCloseRight()
