@@ -5,7 +5,7 @@ bufutils.vim provide utilities to Close buffers faster
 ## Installation:
 
 ### Vundle
-* Add Plugin 'smitajit/utility.vim' to your .vimrc file and call :PluginInstall
+* Add Plugin 'smitajit/bufutils.vim' to your .vimrc file and call :PluginInstall
  
 #### Basic Usage
 * :BCloseAll -- will close all buffers
