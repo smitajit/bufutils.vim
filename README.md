@@ -1,4 +1,4 @@
-# bufutis.vim
+# bufutils.vim
 bufutils.vim provide utilities to Close buffers faster
 
 
@@ -6,7 +6,9 @@ bufutils.vim provide utilities to Close buffers faster
 
 ### Vundle
 * Add Plugin 'smitajit/bufutils.vim' to your .vimrc file and call :PluginInstall
- 
+### pathogen
+* git clone https://github.com/smitajit/bufutils.vim ~/.vim/bundle/bufutil.vim
+
 #### Basic Usage
 * :BCloseAll -- will close all buffers
 * :BClosePreviews -- will close preview buffers , help buffers , localtion buffers and if nerd tree is Opened it will call NERDTreeToggle
