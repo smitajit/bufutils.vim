@@ -1,5 +1,5 @@
 # bufutils.vim
-bufutils.vim provide utilities to Close buffers faster
+bufutils.vim provide utilities to Open/Close/Refesh buffers faster
 
 
 ## Installation:
