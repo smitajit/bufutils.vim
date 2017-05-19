@@ -1,9 +1,42 @@
+fun! bufutils#BRefresh()
+	try
+		edit
+		echon " buffer refreshed"
+	catch
+		echon " Faile to refresh buffer"
+	endtry
+
+endfun
+
+fun! bufutils#BOpen(fileName)
+	execute "edit ".a:fileName
+endfun	
+
+fun! bufutils#BOpenSVertical(fileName)
+	execute "vsplit ".a:fileName
+endfun
+
+fun! bufutils#BOpenSHorizontal(fileName)
+	execute "split ".a:fileName
+endfun
+
+
 fun!  bufutils#BClosePreviews()
 	pclose
 	lclose
 	helpclose
 	if exists('g:NERDTree') && g:NERDTree.IsOpen()
 		NERDTreeToggle
+	endif
+endfun
+
+fun! bufutils#BCloseThis()
+	let s:curNr = bufnr("%")
+	let s:res = bufutils#closeobuffer(s:curNr)
+	if s:res == "true"
+		echon " Closed this buffer"
+	else
+		echon  " Failed to close this buffer"
 	endif
 endfun
 
@@ -17,7 +50,7 @@ fun! bufutils#BCloseAll()
 			endif
 		let s:bufNr = s:bufNr - 1
 	endwhile	
-	echo "Closed " s:count " buffers"
+	echon " Closed " s:count " buffers"
 endfun
 
 fun! bufutils#BCloseLeft()
@@ -33,7 +66,7 @@ fun! bufutils#BCloseLeft()
 			endif
 		let s:bufNr = s:bufNr - 1
 	endwhile	
-	echo "Closed " s:count " buffers"
+	echon " Closed " s:count " buffers"
 endfun
 
 fun! bufutils#BCloseRight()
@@ -49,7 +82,7 @@ fun! bufutils#BCloseRight()
 			endif
 		let s:bufNr = s:bufNr - 1
 	endwhile	
-	echo "Closed " s:count " buffers"
+	echon " Closed " s:count " buffers"
 endfun
 
 fun! bufutils#BCloseOther()
@@ -65,7 +98,7 @@ fun! bufutils#BCloseOther()
 		endif
 		let s:bufnr = s:bufnr - 1
 	endwhile	
-	echo "closed " s:count " buffers"
+	echon " closed " s:count " buffers"
 endfun
 
 
