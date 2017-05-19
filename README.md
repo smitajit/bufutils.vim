@@ -15,6 +15,7 @@ bufutils.vim provide utilities to Close buffers faster
 * :BCloseLeft -- will close all buffers to the left of the current buffer
 * :BCloseRight -- will close all buffers to the right of the current buffer
 * :BCloseOther -- will close all buffers except the current buffer
+* :BCloseThis -- will close this buffer
 
 #### vimrc key mapping
 * Add the below key mapping to your .vimrc for better bufutils use:
@@ -24,4 +25,5 @@ bufutils.vim provide utilities to Close buffers faster
 	map ql :BCloseLeft<cr>
 	map qr :BCloseRight<cr>
 	map qo :BCloseOther<cr>
+	map qt :BCloseThis<cr>
 	```
