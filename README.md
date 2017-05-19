@@ -21,8 +21,6 @@ bufutils.vim provide utilities to Close buffers faster
 * :BOpenSVertical	 -- Will open a file in vertical split. The argument to this is the filepath
 * :BOpenSHorizontal	 -- Will opena a file in horizontal split. The argument to this is the filepath
 * :BRefresh 		 -- Will refresh the current buffer
-
-
 #### vimrc key mapping
 * Add the below key mapping to your .vimrc for better bufutils use:
 	```vim
