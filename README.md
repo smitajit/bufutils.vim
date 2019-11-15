@@ -25,11 +25,11 @@ bufutils.vim provide utilities to Open/Close/Refesh buffers faster
 
 #### vimrc key mapping
 * Add the below key mapping to your .vimrc for better bufutils use:
-	```vim
-	map qq :BClosePreviews<cr>
-	map qa :BCloseAll<cr>
-	map ql :BCloseLeft<cr>
-	map qr :BCloseRight<cr>
-	map qo :BCloseOther<cr>
-	map qt :BCloseThis<cr>
-	```
+```vim
+map qq :BClosePreviews<cr>
+map qa :BCloseAll<cr>
+map ql :BCloseLeft<cr>
+map qr :BCloseRight<cr>
+map qo :BCloseOther<cr>
+map qt :BCloseThis<cr>
+```
