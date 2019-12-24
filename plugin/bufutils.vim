@@ -25,9 +25,9 @@ fun!  bufutils#BClosePreviews()
 	pclose
 	lclose
 	helpclose
-	if exists('g:NERDTree') && g:NERDTree.IsOpen()
-		NERDTreeToggle
-	endif
+	"if exists('g:NERDTree') && g:NERDTree.IsOpen()
+		"NERDTreeToggle
+	"endif
 endfun
 
 fun! bufutils#BCloseThis()
