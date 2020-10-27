@@ -10,7 +10,7 @@ endfun
 
 fun! bufutils#BOpen(file_name)
 	execute "edit ".a:file_name
-endfun	
+endfun
 
 fun! bufutils#BOpenSVertical(file_name)
 	execute "vsplit ".a:file_name
@@ -49,7 +49,7 @@ fun! bufutils#BCloseAll()
 				let s:count = s:count + 1
 			endif
 		let s:buf_n = s:buf_n - 1
-	endwhile	
+	endwhile
 	echon " Closed " s:count " buffers"
 endfun
 
@@ -65,7 +65,7 @@ fun! bufutils#BCloseLeft()
 				endif
 			endif
 		let s:buf_n = s:buf_n - 1
-	endwhile	
+	endwhile
 	echon " Closed " s:count " buffers"
 endfun
 
@@ -81,7 +81,7 @@ fun! bufutils#BCloseRight()
 				endif
 			endif
 		let s:buf_n = s:buf_n - 1
-	endwhile	
+	endwhile
 	echon " Closed " s:count " buffers"
 endfun
 
@@ -92,7 +92,7 @@ fun! bufutils#BCloseOther()
 	while s:buf_n > 0
 		if s:buf_n != s:cur_buf_n
 			let s:res = bufutils#closebuffer(s:buf_n)
-			if s:res == "true" 
+			if s:res == "true"
 				let s:count = s:count + 1
 			endif
 		endif
@@ -109,7 +109,6 @@ fun! bufutils#closebuffer(buf_n)
 			return "true"
 		catch
 		endtry
-
 	endif
 	return "false"
 endfun
