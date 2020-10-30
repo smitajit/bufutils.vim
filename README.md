@@ -5,31 +5,40 @@ bufutils.vim provide utilities to Open/Close/Refresh/Move/Resize/Zoom buffers fa
 ## Installation:
 
 ### Vundle
-* Add Plugin 'smitajit/bufutils.vim' to your `.vimrc` file and call `:PluginInstall`
+* Add Plugin `smitajit/bufutils.vim` to your `.vimrc` file and call `:PluginInstall`
 ### pathogen
 * git clone https://github.com/smitajit/bufutils.vim ~/.vim/bundle/bufutils.vim
 
-#### Commands
+## Commands
+| Command                         | Description                                                                  |
+| ---                             | ---                                                                          |
+| `:BCloseAll`                    | Close all buffers                                                            |
+| `:BClosePreviews`               | Close preview buffers, help buffers, localtion buffers                       |
+| `:BCloseLeft`                   | Close all buffers, left of the current buffer                                |
+| `:BCloseRight`                  | Close all buffers, right of the current buffer                               |
+| `:BCloseOther`                  | Close all buffers, except the current buffer                                 |
+| `:BCloseThis`                   | Close the current buffer                                                     |
+| `:BCloseOther`                  | Close all buffers, except the current buffer                                 |
+|                                                                                                                |
+| `:BOpen {file_names}`           | Open new buffers with the files argument                                     |
+| `:BOpenSVertical {file_names}`  | Open new buffers in vertical split with the files argument                   |   
+| `:BOpenSHorizontal {file_names}`| Open new buffers in horizonal split with the files argument                  |
+|                                                                                                                |
+| `:BMoveToLeft`                  | Move the current buffer to the left of window                                |
+| `:BMoveToRight`                 | Move the current buffer to the right of window                               |
+| `:BMoveToTop`                   | Move the current buffer to the top of window                                 |
+| `:BMoveToBottom`                | Move the current buffer to the bottom of window                              |
+|                                                                                                                |
+| `:BResizeIncreaseHeight {size}` | Increase the height of the current buffer by value {size}. Default size is 5 |
+| `:BResizeDecreaseHeight {size}` | Decrease the height of the current buffer by value {size}. Default size is 5 |
+| `:BResizeIncreaseWidth {size}`  | Increase the width of the current buffer by value {size}. Default size is 5  |
+| `:BResizeDecreaseWidth {size}`  | Decrease the width of the current buffer by value {size}. Default size is 5  |
+| `:BResizeFullHeight`            | Increase the heigh of the current buffer to maximum                          |
+| `:BResizeFullWidth`             | Increase the width of the current buffer to maximum                          |
+| `:BResizeFullWidth`             | Increase the width of the current buffer to maximum                          |
+| `:BResizeReset`                 | Restets the size of all buffers                                              |
+| `:BResizeToggleZoom`            | Toggle zoom in and zoom out of the current buffer                            |
+|                                                                                                                |
+| `:BRefresh`                     | Refresh the current buffer                                                   |
 
-* :BCloseAll 		 -- will close all buffers
-* :BClosePreviews	 -- will close preview buffers , help buffers , localtion buffers and if nerd tree is Opened it will call NERDTreeToggle
-* :BCloseLeft		 -- will close all buffers to the left of the current buffer
-* :BCloseRight		 -- will close all buffers to the right of the current buffer
-* :BCloseOther		 -- will close all buffers except the current buffer
-* :BCloseThis	       	 -- will close this buffer
-* :BOpen       	       	 -- Will open a file. The argument to this is the filepath
-* :BOpenSVertical	 -- Will open a file in vertical split. The argument to this is the filepath
-* :BOpenSHorizontal	 -- Will opena a file in horizontal split. The argument to this is the filepath
-* :BRefresh 		 -- Will refresh the current buffer
 
-
-#### vimrc key mapping
-* Add the below key mapping to your .vimrc for better bufutils use:
-```vim
-map qq :BClosePreviews<cr>
-map qa :BCloseAll<cr>
-map ql :BCloseLeft<cr>
-map qr :BCloseRight<cr>
-map qo :BCloseOther<cr>
-map qt :BCloseThis<cr>
-```
