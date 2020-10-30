@@ -1,15 +1,15 @@
 # bufutils.vim
-bufutils.vim provide utilities to Open/Close/Refesh buffers faster
+bufutils.vim provide utilities to Open/Close/Refresh/Move/Resize/Zoom buffers faster
 
 
 ## Installation:
 
 ### Vundle
-* Add Plugin 'smitajit/bufutils.vim' to your .vimrc file and call :PluginInstall
+* Add Plugin 'smitajit/bufutils.vim' to your `.vimrc` file and call `:PluginInstall`
 ### pathogen
-* git clone https://github.com/smitajit/bufutils.vim ~/.vim/bundle/bufutil.vim
+* git clone https://github.com/smitajit/bufutils.vim ~/.vim/bundle/bufutils.vim
 
-#### Basic Usage
+#### Commands
 
 * :BCloseAll 		 -- will close all buffers
 * :BClosePreviews	 -- will close preview buffers , help buffers , localtion buffers and if nerd tree is Opened it will call NERDTreeToggle

@@ -1,114 +1,27 @@
-fun! bufutils#BRefresh()
-	try
-		edit
-		echon " buffer refreshed"
-	catch
-		echon " failed to refresh buffer"
-	endtry
+let g:bufutils#commands = [
+    \{"command": "BCloseThis",            "target" : "bufutils#close#This()",                    "scope" : "close",  "options" : "",                          },
+    \{"command": "BClosePreviews",        "target" : "bufutils#close#Previews()",                "scope" : "close",  "options" : "",                          },
+    \{"command": "BCloseAll",             "target" : "bufutils#close#All()",                     "scope" : "close",  "options" : "",                          },
+    \{"command": "BCloseOther",           "target" : "bufutils#close#Other()",                   "scope" : "close",  "options" : "",                          },
+    \{"command": "BCloseLeft",            "target" : "bufutils#close#Left()",                    "scope" : "close",  "options" : "",                          },
+    \{"command": "BCloseRight",           "target" : "bufutils#close#Right()",                   "scope" : "close",  "options" : "",                          },
+    \{"command": "BOpenSHorizontal",      "target" : "bufutils#open#SplitHorizontal(<f-args>)",  "scope" : "open",   "options" : "-nargs=* -complete=file",   },
+    \{"command": "BOpenSVertical",        "target" : "bufutils#open#SplitVertical(<f-args>)",    "scope" : "open",   "options" : "-nargs=* -complete=file",   },
+    \{"command": "BOpen",                 "target" : "bufutils#open#New(<f-args>)",              "scope" : "open",   "options" : "-nargs=* -complete=file",   },
+    \{"command": "BMoveToLeft",           "target" : "bufutils#move#ToLeft()",                   "scope" : "move",   "options" : "",                          },
+    \{"command": "BMoveToRight",          "target" : "bufutils#move#ToRight()",                  "scope" : "move",   "options" : "",                          },
+    \{"command": "BMoveToTop",            "target" : "bufutils#move#ToTop()",                    "scope" : "move",   "options" : "",                          },
+    \{"command": "BMoveToBottom",         "target" : "bufutils#move#ToBottom()",                 "scope" : "move",   "options" : "",                          },
+    \{"command": "BResizeIncreaseHeight", "target" : "bufutils#resize#IncreaseHeight(<f-args>)", "scope" : "resize", "options" : "-nargs=?",                  },
+    \{"command": "BResizeDecreaseHeight", "target" : "bufutils#resize#DecreaseHeight(<f-args>)", "scope" : "resize", "options" : "-nargs=?",                  },
+    \{"command": "BResizeIncreaseWidth",  "target" : "bufutils#resize#IncreaseWidth(<f-args>)",  "scope" : "resize", "options" : "-nargs=?",                  },
+    \{"command": "BResizeDecreaseWidth",  "target" : "bufutils#resize#DecreaseWidth(<f-args>)",  "scope" : "resize", "options" : "-nargs=?",                  },
+    \{"command": "BResizeFullWidth",      "target" : "bufutils#resize#FullWidth()",              "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeFullHeight",     "target" : "bufutils#resize#FullHeight()",             "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeReset",          "target" : "bufutils#resize#Reset()",                  "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeToggleZoom",     "target" : "bufutils#resize#Toggle(v:true)",           "scope" : "resize", "options" : "",                          },
+    \{"command": "BRefresh",              "target" : "bufutils#refresh#Buffer()",                "scope" : "other" , "options" : "",                          },
+\]
 
-endfun
-
-fun! bufutils#BOpen(file_name)
-	execute "edit ".a:file_name
-endfun
-
-fun! bufutils#BOpenSVertical(file_name)
-	execute "vsplit ".a:file_name
-endfun
-
-fun! bufutils#BOpenSHorizontal(file_name)
-	execute "split ".a:file_name
-endfun
-
-
-fun!  bufutils#BClosePreviews()
-	pclose
-	lclose
-	helpclose
-	"if exists('g:NERDTree') && g:NERDTree.IsOpen()
-		"NERDTreeToggle
-	"endif
-endfun
-
-fun! bufutils#BCloseThis()
-	let s:cur_buf_n = bufnr("%")
-	let s:res = bufutils#closebuffer(s:cur_buf_n)
-	if s:res == "true"
-		echon " closed this buffer"
-	else
-		echon  " failed to close this buffer"
-	endif
-endfun
-
-fun! bufutils#BCloseAll()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	while s:buf_n > 0
-			let s:res = bufutils#closebuffer(s:buf_n)
-			if s:res == "true"
-				let s:count = s:count + 1
-			endif
-		let s:buf_n = s:buf_n - 1
-	endwhile
-	echon " Closed " s:count " buffers"
-endfun
-
-fun! bufutils#BCloseLeft()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	let s:cur_buf_n = bufnr("%")
-	while s:buf_n > 0
-			if s:buf_n < s:cur_buf_n
-				let s:res = bufutils#closebuffer(s:buf_n)
-				if s:res == "true"
-					let s:count = s:count + 1
-				endif
-			endif
-		let s:buf_n = s:buf_n - 1
-	endwhile
-	echon " Closed " s:count " buffers"
-endfun
-
-fun! bufutils#BCloseRight()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	let s:cur_buf_n = bufnr("%")
-	while s:buf_n > 0
-			if s:buf_n > s:cur_buf_n
-				let s:res = bufutils#closebuffer(s:buf_n)
-				if s:res == "true"
-					let s:count = s:count + 1
-				endif
-			endif
-		let s:buf_n = s:buf_n - 1
-	endwhile
-	echon " Closed " s:count " buffers"
-endfun
-
-fun! bufutils#BCloseOther()
-	let s:cur_buf_n = bufnr("%")
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	while s:buf_n > 0
-		if s:buf_n != s:cur_buf_n
-			let s:res = bufutils#closebuffer(s:buf_n)
-			if s:res == "true"
-				let s:count = s:count + 1
-			endif
-		endif
-		let s:buf_n = s:buf_n - 1
-	endwhile
-	echon " closed " s:count " buffers"
-endfun
-
-
-fun! bufutils#closebuffer(buf_n)
-	if getbufvar(a:buf_n , '&modified') == 0
-		try
-			execute "bd ".a:buf_n
-			return "true"
-		catch
-		endtry
-	endif
-	return "false"
-endfun
+:call bufutils#common#register_commands()
+:command! -nargs=* -complete=custom,bufutils#common#list_commands BCommands call bufutils#common#exec_command(<f-args>)
