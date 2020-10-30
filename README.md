@@ -42,4 +42,34 @@ bufutils.vim provide utilities to Open/Close/Refresh/Move/Resize/Zoom buffers fa
 |                                                                                                                |
 | `:BRefresh`                     | Refresh the current buffer                                                   |
 
+## Options
 
+`g:bufutils#resize#default#width`
+*	Type |Number|.
+* Value to increase or decrease width of the buffer
+*	Default value is 5
+
+`g:bufutils#resize#default#height`
+* Type |Number|.
+* Value to increase or decrease height of the buffer
+* Default value is 5
+
+`g:bufutils#resize#auto#reset`
+* Type |Number|.
+*  Enable or disable auto resize reset on window change. Default is 1 (enabled)
+*  0 - Disable
+*  1 - Enable
+
+`g:bufutils#open#use_fzf`
+*	Type |Number|.
+* Enable or disable fzf for opening buffer. Valid for BOpen, BOpenSVertical, BOpenSHorizontal
+*	Default value is 0
+*  0 - Disable fzf
+*  1 - Enable fzf
+
+`g:g:bufutils#fzf#with_preview`
+*	Type |Number|.
+* Enable or disable preview when running in fzf mode
+*	Default value is 0
+*  0 - Disable preview
+*  1 - Enable preview
