@@ -21,9 +21,8 @@ let g:bufutils#commands = [
     \{"command": "BResizeFullWidth",      "target" : "bufutils#resize#FullWidth()",              "scope" : "resize", "options" : "",                          },
     \{"command": "BResizeFullHeight",     "target" : "bufutils#resize#FullHeight()",             "scope" : "resize", "options" : "",                          },
     \{"command": "BResizeReset",          "target" : "bufutils#resize#Reset()",                  "scope" : "resize", "options" : "",                          },
-    \{"command": "BResizeToggleZoom",     "target" : "bufutils#resize#Toggle(v:true)",           "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeToggleZoom",     "target" : "bufutils#resize#ToggleZoom(v:true)",       "scope" : "resize", "options" : "",                          },
     \{"command": "BRefresh",              "target" : "bufutils#refresh#Buffer()",                "scope" : "other" , "options" : "",                          },
 \]
 
 :call bufutils#common#register_commands()
-:command! -nargs=* -complete=custom,bufutils#common#list_commands BCommands call bufutils#common#exec_command(<f-args>)

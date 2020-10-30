@@ -1,4 +1,4 @@
-let g:bufutils#open#use_fzf = 1
+let g:bufutils#open#use_fzf = 0
 
 fun! bufutils#open#New(...)
     if a:0 >=1
@@ -6,7 +6,11 @@ fun! bufutils#open#New(...)
 	    	execute "edit ".f
 		endfor
     else
-	    execute "edit"
+		if g:bufutils#open#use_fzf == 1
+			call bufutils#fzf#files("")
+		else
+			execute "edit"
+		endif
     endif
 endfun
 
@@ -16,7 +20,11 @@ fun! bufutils#open#SplitVertical(...)
 	    	execute "vsplit ".f
 		endfor
     else
-	    execute "vsplit"
+		if g:bufutils#open#use_fzf == 1
+			call bufutils#fzf#files("V")
+		else
+			execute "vsplit"
+		endif
     endif
 endfun
 
@@ -26,7 +34,10 @@ fun! bufutils#open#SplitHorizontal(...)
 	    	execute "split ".f
 		endfor
     else
-	    execute "split"
+	    if g:bufutils#open#use_fzf == 1
+			call bufutils#fzf#files("H")
+		else
+			execute "split"
+		endif
     endif
 endfun
-
