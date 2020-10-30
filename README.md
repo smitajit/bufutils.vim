@@ -14,13 +14,13 @@ bufutils.vim provide utilities to Open/Close/Refresh/Move/Resize/Zoom buffers fa
 | ---                             | ---                                                                          |
 | `:BCloseAll`                    | Close all buffers                                                            |
 | `:BClosePreviews`               | Close preview buffers, help buffers, location buffers                        |
-| `:BCloseLeft`                   | Close all buffers, left of the current buffer                                |
-| `:BCloseRight`                  | Close all buffers, right of the current buffer                               |
-| `:BCloseOther`                  | Close all buffers, except the current buffer                                 |
+| `:BCloseLeft`                   | Close all buffers left of the current buffer                                 |
+| `:BCloseRight`                  | Close all buffers right of the current buffer                                |
+| `:BCloseOther`                  | Close all buffers except the current buffer                                  |
 | `:BCloseThis`                   | Close the current buffer                                                     |
 | `:BCloseOther`                  | Close all buffers, except the current buffer                                 |
 | `:BCloseRetainPrevious`         | Close current buffer but bring back the previous buffer                      |
-| `:BHide`                        | Hides the current buffer                                                     |
+| `:BHide`                        | Hide the current buffer                                                      |
 |                                                                                                                |
 | `:BOpen {file_names}`           | Open new buffers with the files argument                                     |
 | `:BOpenSVertical {file_names}`  | Open new buffers in vertical split with the files argument                   |
@@ -35,11 +35,11 @@ bufutils.vim provide utilities to Open/Close/Refresh/Move/Resize/Zoom buffers fa
 | `:BResizeDecreaseHeight {size}` | Decrease the height of the current buffer by value {size}. Default size is 5 |
 | `:BResizeIncreaseWidth {size}`  | Increase the width of the current buffer by value {size}. Default size is 5  |
 | `:BResizeDecreaseWidth {size}`  | Decrease the width of the current buffer by value {size}. Default size is 5  |
-| `:BResizeFullHeight`            | Increase the heigh of the current buffer to maximum                          |
+| `:BResizeFullHeight`            | Increase the height of the current buffer to maximum                         |
 | `:BResizeFullWidth`             | Increase the width of the current buffer to maximum                          |
 | `:BResizeFullWidth`             | Increase the width of the current buffer to maximum                          |
 | `:BResizeReset`                 | Resets the size of all buffers                                               |
-| `:BResizeToggleZoom`            | Toggle zoom in and zoom out of the current buffer                            |
+| `:BResizeZoom`                  | Toggle zoom in and zoom out of the current buffer                            |
 |                                                                                                                |
 | `:BRefresh`                     | Refresh the current buffer                                                   |
 

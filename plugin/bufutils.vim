@@ -18,10 +18,10 @@ let g:bufutils#commands = [
     \{"command": "BResizeDecreaseHeight", "target" : "bufutils#resize#DecreaseHeight(<f-args>)", "scope" : "resize", "options" : "-nargs=?",                  },
     \{"command": "BResizeIncreaseWidth",  "target" : "bufutils#resize#IncreaseWidth(<f-args>)",  "scope" : "resize", "options" : "-nargs=?",                  },
     \{"command": "BResizeDecreaseWidth",  "target" : "bufutils#resize#DecreaseWidth(<f-args>)",  "scope" : "resize", "options" : "-nargs=?",                  },
-    \{"command": "BResizeFullWidth",      "target" : "bufutils#resize#FullWidth()",              "scope" : "resize", "options" : "",                          },
-    \{"command": "BResizeFullHeight",     "target" : "bufutils#resize#FullHeight()",             "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeFullWidth",      "target" : "bufutils#resize#FullWidth(v:true)",        "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeFullHeight",     "target" : "bufutils#resize#FullHeight(v:true)",       "scope" : "resize", "options" : "",                          },
     \{"command": "BResizeReset",          "target" : "bufutils#resize#Reset()",                  "scope" : "resize", "options" : "",                          },
-    \{"command": "BResizeToggleZoom",     "target" : "bufutils#resize#ToggleZoom(v:true)",       "scope" : "resize", "options" : "",                          },
+    \{"command": "BResizeZoom",           "target" : "bufutils#resize#Zoom(v:true)",             "scope" : "resize", "options" : "",                          },
     \{"command": "BRefresh",              "target" : "bufutils#refresh#Buffer()",                "scope" : "other" , "options" : "",                          },
 \]
 
