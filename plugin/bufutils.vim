@@ -5,6 +5,8 @@ let g:bufutils#commands = [
     \{"command": "BCloseOther",           "target" : "bufutils#close#Other()",                   "scope" : "close",  "options" : "",                          },
     \{"command": "BCloseLeft",            "target" : "bufutils#close#Left()",                    "scope" : "close",  "options" : "",                          },
     \{"command": "BCloseRight",           "target" : "bufutils#close#Right()",                   "scope" : "close",  "options" : "",                          },
+    \{"command": "BCloseRetainPrevious",  "target" : "bufutils#close#RetainPrevious()",          "scope" : "close",  "options" : "",                          },
+    \{"command": "BHide",                 "target" : "bufutils#close#Hide()",                    "scope" : "close",  "options" : "",                          },
     \{"command": "BOpenSHorizontal",      "target" : "bufutils#open#SplitHorizontal(<f-args>)",  "scope" : "open",   "options" : "-nargs=* -complete=file",   },
     \{"command": "BOpenSVertical",        "target" : "bufutils#open#SplitVertical(<f-args>)",    "scope" : "open",   "options" : "-nargs=* -complete=file",   },
     \{"command": "BOpen",                 "target" : "bufutils#open#New(<f-args>)",              "scope" : "open",   "options" : "-nargs=* -complete=file",   },

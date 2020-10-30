@@ -5,9 +5,9 @@ fun! bufutils#close#Previews()
 endfun
 
 fun! bufutils#close#This()
-	let s:cur_buf_n = bufnr("%")
-	let s:res = bufutils#close#buffer(s:cur_buf_n)
-	if s:res == "true"
+	let l:cur_buf_n = bufnr("%")
+	let l:res = bufutils#close#buffer(l:cur_buf_n)
+	if l:res == "true"
 		echon " closed this buffer"
 	else
 		echon  " failed to close this buffer"
@@ -15,67 +15,75 @@ fun! bufutils#close#This()
 endfun
 
 fun! bufutils#close#All()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	while s:buf_n > 0
-			let s:res = bufutils#close#buffer(s:buf_n)
-			if s:res == "true"
-				let s:count = s:count + 1
+	let l:count = 0
+	let l:buf_n = bufnr("$")
+	while l:buf_n > 0
+			let l:res = bufutils#close#buffer(l:buf_n)
+			if l:res == "true"
+				let l:count = l:count + 1
 			endif
-		let s:buf_n = s:buf_n - 1
+		let l:buf_n = l:buf_n - 1
 	endwhile
-	echon " Closed " s:count " buffers"
+	echon " Closed " l:count " buffers"
 endfun
 
 fun! bufutils#close#Left()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	let s:cur_buf_n = bufnr("%")
+	let l:count = 0
+	let l:buf_n = bufnr("$")
+	let l:cur_buf_n = bufnr("%")
 
-	while s:buf_n > 0
-			if s:buf_n < s:cur_buf_n
-				let s:res = bufutils#close#buffer(s:buf_n)
-				if s:res == "true"
-					let s:count = s:count + 1
+	while l:buf_n > 0
+			if l:buf_n < l:cur_buf_n
+				let l:res = bufutils#close#buffer(l:buf_n)
+				if l:res == "true"
+					let l:count = l:count + 1
 				endif
 			endif
-		let s:buf_n = s:buf_n - 1
+		let l:buf_n = l:buf_n - 1
 	endwhile
-	echon " Closed " s:count " buffers"
+	echon " Closed " l:count " buffers"
 endfun
 
 fun! bufutils#close#Right()
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	let s:cur_buf_n = bufnr("%")
-	while s:buf_n > 0
-			if s:buf_n > s:cur_buf_n
-				let s:res = bufutils#close#buffer(s:buf_n)
-				if s:res == "true"
-					let s:count = s:count + 1
+	let l:count = 0
+	let l:buf_n = bufnr("$")
+	let l:cur_buf_n = bufnr("%")
+	while l:buf_n > 0
+			if l:buf_n > l:cur_buf_n
+				let l:res = bufutils#close#buffer(l:buf_n)
+				if l:res == "true"
+					let l:count = l:count + 1
 				endif
 			endif
-		let s:buf_n = s:buf_n - 1
+		let l:buf_n = l:buf_n - 1
 	endwhile
-	echon " Closed " s:count " buffers"
+	echon " Closed " l:count " buffers"
 endfun
 
 fun! bufutils#close#Other()
-	let s:cur_buf_n = bufnr("%")
-	let s:count = 0
-	let s:buf_n = bufnr("$")
-	while s:buf_n > 0
-		if s:buf_n != s:cur_buf_n
-			let s:res = bufutils#close#buffer(s:buf_n)
-			if s:res == "true"
-				let s:count = s:count + 1
+	let l:cur_buf_n = bufnr("%")
+	let l:count = 0
+	let l:buf_n = bufnr("$")
+	while l:buf_n > 0
+		if l:buf_n != l:cur_buf_n
+			let l:res = bufutils#close#buffer(l:buf_n)
+			if l:res == "true"
+				let l:count = l:count + 1
 			endif
 		endif
-		let s:buf_n = s:buf_n - 1
+		let l:buf_n = l:buf_n - 1
 	endwhile
-	echon " closed " s:count " buffers"
+	echon " closed " l:count " buffers"
 endfun
 
+
+func! bufutils#close#RetainPrevious()
+	execute "bp|sp|bn|bd"
+endfun
+
+func! bufutils#close#Hide()
+	execute "hide"
+endfun
 
 fun! bufutils#close#buffer(buf_n)
 	if getbufvar(a:buf_n , '&modified') == 0
