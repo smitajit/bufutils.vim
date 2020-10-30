@@ -1,2 +1,141 @@
-*bufutils.txt* buffer utilities to work with buffers
+*bufutils.txt*                        (Neo)vim buffer utility plugin
+==============================================================================
+Author : Smitajit Biswal <https://github.com/smitajit>
+==============================================================================
 
+CONTENTS                                         *bufutils-contents*
+Introduction                                     |bufutils-introduction|
+Options                                          |bufutils-options|
+Commands                                         |bufutils-commands|
+Repository                                       |bufutils-repository|
+==============================================================================
+INTRODUCTION                                     *bufutils-introduction*
+
+Use bufutils to manager vim buffer faster and easier
+
+- Open and close buffer easily
+- Move and resize buffers easily
+- Refresh and zoom in/zoom out buffers easily
+- Integrate with fzf.vim
+==============================================================================
+OPTIONS                                          *bufutils-options*
+
+g:bufutils#resize#default#width                  *g:bufutils#resize#default#width*
+	Type |Number|.
+  Value to increase or decrease width of the buffer
+	Default value is 5
+
+g:bufutils#resize#default#height                  *g:bufutils#resize#default#height*
+	Type |Number|.
+  Value to increase or decrease height of the buffer
+	Default value is 5
+
+g:bufutils#resize#auto#reset                   *g:bufutils#resize#auto#reset*
+	Type |Number|.
+  Enable or disable auto resize reset on window change. Default is 1 (enabled)
+  0 - Disable
+  1 - Enable
+
+g:bufutils#open#use_fzf                           *g:bufutils#open#use_fzf*
+	Type |Number|.
+  Enable or disable fzf for opening buffer. Valid for BOpen, BOpenSVertical, BOpenSHorizontal
+	Default value is 0
+  0 - Disable fzf
+  1 - Enable fzf
+
+g:g:bufutils#fzf#with_preview                     *g:bufutils#fzf#with_preview*
+	Type |Number|.
+  Enable or disable preview when running in fzf mode
+	Default value is 0
+  0 - Disable preview
+  1 - Enable preview
+
+==============================================================================
+COMMANDS                                         *bufutils-commands*
+
+:BCloseAll                                         *BCloseAll*
+	Close all opened buffers
+
+:BClosePreviews                                    *BClosePreviews*
+	Close all preview buffers, help buffers, location buffers
+
+:BCloseLeft                                        *BCloseLeft*
+	Close all buffers left to the current buffer
+
+:BCloseRight                                       *BCloseRight*
+	Close all buffers right to the current buffer
+
+:BCloseThis                                        *BCloseThis*
+	Close the current buffer
+
+:BCloseRetainPrevious                              *BCloseRetainPrevious*
+	Close current buffer but brings back the previous buffer
+
+:BHide                                             *BHide*
+	Hide the current buffer
+
+:BOpen [file_names]                                *BOpen*
+  Opens new buffers for the [file_names]
+  If file_names are empty based on g:bufutils#open#use_fzf value FZF options will be triggered or
+  a new scratch buffer will be opened
+
+:BOpenSVertical [file_names]                                *BOpenSVertical*
+  Opens new buffers for the [file_names] in vertical splits
+  If file_names are empty based on g:bufutils#open#use_fzf value, FZF options will be triggered or
+  a new scratch buffer will be opened in vertical split
+
+:BOpenSHorizontal [file_names]                                *BOpenSHorizontal*
+  Opens new buffers for the [file_names] in vertical splits
+  If file_names are empty based on g:bufutils#open#use_fzf value, FZF options will be triggered or
+  a new scratch buffer will be opened in vertical split
+
+:BMoveToLeft                                      *BMoveToLeft*
+ Move the current buffer to left of window
+
+:BMoveToRight                                      *BMoveToRight*
+ Move the current buffer to right of window
+
+:BMoveToTop                                      *BMoveToTop*
+ Move the current buffer to top of window
+
+:BMoveToBottom                                      *BMoveToBottom*
+ Move the current buffer to bottom of window
+
+:BResizeIncreaseHeight [size]                     *BResizeIncreaseHeight*
+ Increase the height of the current buffer by value [size].
+ Without [size] [g:bufutils#resize#default#height] will be considered
+
+:BResizeDecreaseHeight [size]                     *BResizeDecreaseHeight*
+ Decrease the height of the current buffer by value [size].
+ Without [size] [g:bufutils#resize#default#height] will be considered
+
+:BResizeIncreaseWidth [size]                     *BResizeIncreaseWidth*
+ Increase the width of the current buffer by value [size].
+ Without [size] [g:bufutils#resize#default#width] will be considered
+
+:BResizeDecreaseWidth [size]                     *BResizeDecreaseWidth*
+ Decrease the width of the current buffer by value [size].
+ Without [size] [g:bufutils#resize#default#width] will be considered
+
+:BResizeFullHeight[!]                               *BResizeFullHeight*
+ Toggles between maximum and normal width of the buffer
+
+:BResizeFullWidth[!]                               *BResizeFullWidth*
+ Toggles between maximum and normal height of the buffer
+
+:BResizeReset                               *BResizeReset*
+ Reset the size of all buffers
+
+:BResizeZoom[!]                               *BResizeToggleZoom*
+ Toggle zoom in and zoom out of the current buffer
+
+:BRefresh
+ Refresh the current buffer
+
+==============================================================================
+REPOSITORY                                          *bufutils-repository-page*
+
+https://github.com/smitajit/bufutils.vim
+
+==============================================================================
+vim:tw=78:ts=4:ft=help:fen:
