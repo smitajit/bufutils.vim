@@ -30,6 +30,12 @@ g:bufutils#resize#default#height                  *g:bufutils#resize#default#hei
   Value to increase or decrease height of the buffer
 	Default value is 5
 
+g:bufutils#resize#auto#reset                   *g:bufutils#resize#auto#reset*
+	Type |Number|.
+  Enable or disable auto resize reset on window change. Default is 1 (enabled)
+  0 - Disable
+  1 - Enable
+
 g:bufutils#open#use_fzf                           *g:bufutils#open#use_fzf*
 	Type |Number|.
   Enable or disable fzf for opening buffer. Valid for BOpen, BOpenSVertical, BOpenSHorizontal
@@ -114,13 +120,13 @@ COMMANDS                                         *bufutils-commands*
 :BResizeFullHeight[!]                               *BResizeFullHeight*
  Toggles between maximum and normal width of the buffer
 
-:BResizeFullWidth                               *BResizeFullWidth*
- Toggles between maximum and normal heigh of the buffer
+:BResizeFullWidth[!]                               *BResizeFullWidth*
+ Toggles between maximum and normal height of the buffer
 
 :BResizeReset                               *BResizeReset*
  Reset the size of all buffers
 
-:BResizeToggleZoom                               *BResizeToggleZoom*
+:BResizeZoom[!]                               *BResizeToggleZoom*
  Toggle zoom in and zoom out of the current buffer
 
 :BRefresh

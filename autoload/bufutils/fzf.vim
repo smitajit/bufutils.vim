@@ -1,4 +1,4 @@
-let g:bufutils#fzf#with_preview = 1
+let g:bufutils#fzf#with_preview = get(g:, 'bufutils#fzf#with_preview', 1)
 
 fun! s:get_git_root()
   let root = split(system('git rev-parse --show-toplevel'), '\n')[0]

@@ -1,4 +1,4 @@
-let g:bufutils#open#use_fzf = 1
+let g:bufutils#open#use_fzf = get(g:, 'bufutils#open#use_fzf', 1)
 
 fun! bufutils#open#New(...)
     if a:0 >=1

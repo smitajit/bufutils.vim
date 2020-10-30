@@ -28,5 +28,6 @@ bufutils-repository-page	bufutils.txt	/*bufutils-repository-page*
 bufutils.txt	bufutils.txt	/*bufutils.txt*
 g:bufutils#fzf#with_preview	bufutils.txt	/*g:bufutils#fzf#with_preview*
 g:bufutils#open#use_fzf	bufutils.txt	/*g:bufutils#open#use_fzf*
+g:bufutils#resize#auto#reset	bufutils.txt	/*g:bufutils#resize#auto#reset*
 g:bufutils#resize#default#height	bufutils.txt	/*g:bufutils#resize#default#height*
 g:bufutils#resize#default#width	bufutils.txt	/*g:bufutils#resize#default#width*

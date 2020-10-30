@@ -1,5 +1,6 @@
-let g:bufutils#resize#default#width = 5
-let g:bufutils#resize#default#height = 5
+let g:bufutils#resize#default#width = get(g:, 'bufutils#resize#default#width', 5)
+let g:bufutils#resize#default#height = get(g:, 'bufutils#resize#default#height', 5)
+let g:bufutils#resize#auto#reset = get(g:, 'bufutils#resize#auto#reset', 1)
 
 fun! bufutils#resize#IncreaseHeight(...)
 	if a:0 >= 1
@@ -71,8 +72,11 @@ function! bufutils#resize#Zoom(zoom)
 endfunction
 
 augroup bufutils#resize#restore
-    au WinEnter * silent! :call bufutils#resize#Zoom(v:false)
-    au WinEnter * silent! :call bufutils#resize#FullHeight(v:false)
-    au WinEnter * silent! :call bufutils#resize#FullWidth(v:false)
+	if g:bufutils#resize#auto#reset == 1
+		echoerr "the value is 1"
+		au WinEnter * silent! :call bufutils#resize#Zoom(v:false)
+		au WinEnter * silent! :call bufutils#resize#FullHeight(v:false)
+		au WinEnter * silent! :call bufutils#resize#FullWidth(v:false)
+	endif
 augroup END
 
