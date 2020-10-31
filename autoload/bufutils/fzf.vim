@@ -19,7 +19,7 @@ endfun
 
 fun! s:get_source()
     let root = s:get_git_root()
-    return empty(root) ? 'ls' : 'git ls-files | uniq'
+    return empty(root) ? 'find -type f -follow -print' : 'git ls-files | uniq'
 endfun
 
 fun! s:get_sink(split)
