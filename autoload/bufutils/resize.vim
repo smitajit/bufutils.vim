@@ -73,7 +73,6 @@ endfunction
 
 augroup bufutils#resize#restore
 	if g:bufutils#resize#auto#reset == 1
-		echoerr "the value is 1"
 		au WinEnter * silent! :call bufutils#resize#Zoom(v:false)
 		au WinEnter * silent! :call bufutils#resize#FullHeight(v:false)
 		au WinEnter * silent! :call bufutils#resize#FullWidth(v:false)
