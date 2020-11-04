@@ -22,7 +22,8 @@ let g:bufutils#commands = [
     \{"command": "BResizeFullHeight",     "target" : "bufutils#resize#FullHeight(v:true)",       "scope" : "resize", "options" : "",                          },
     \{"command": "BResizeReset",          "target" : "bufutils#resize#Reset()",                  "scope" : "resize", "options" : "",                          },
     \{"command": "BResizeZoom",           "target" : "bufutils#resize#Zoom(v:true)",             "scope" : "resize", "options" : "",                          },
-    \{"command": "BRefresh",              "target" : "bufutils#refresh#Buffer()",                "scope" : "other" , "options" : "",                          },
+    \{"command": "BRefresh",              "target" : "bufutils#other#Refresh()",                 "scope" : "other" , "options" : "",                          },
+    \{"command": "BFilePath",             "target" : "bufutils#other#FilePath(<f-args>)",        "scope" : "other" , "options" : "-nargs=?",                  },
 \]
 
 :call bufutils#common#register_commands()

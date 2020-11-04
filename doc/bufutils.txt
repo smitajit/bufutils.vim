@@ -129,8 +129,12 @@ COMMANDS                                         *bufutils-commands*
 :BResizeZoom[!]                               *BResizeToggleZoom*
  Toggle zoom in and zoom out of the current buffer
 
-:BRefresh
+:BRefresh                                    *BRefresh*
  Refresh the current buffer
+
+:BFilePath [relative]                        *BFilePath*
+  Echo file path of the current buffer
+  Argument true echos the relative path. Default argument value is false
 
 ==============================================================================
 REPOSITORY                                          *bufutils-repository-page*

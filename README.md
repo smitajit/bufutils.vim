@@ -22,7 +22,7 @@ Plug 'smitajit/bufutils.vim'
 | `:BHide`                        | Hide the current buffer                                                      |
 | `:BOpen {file_names}`           | Open new buffers with the files argument                                     |
 | `:BOpenSVertical {file_names}`  | Open new buffers in vertical split with the files argument                   |
-| `:BOpenSHorizontal {file_names}`| Open new buffers in horizontal split with the files argument                 |                                                 
+| `:BOpenSHorizontal {file_names}`| Open new buffers in horizontal split with the files argument                 |
 | `:BMoveToLeft`                  | Move the current buffer to the left of window                                |
 | `:BMoveToRight`                 | Move the current buffer to the right of window                               |
 | `:BMoveToTop`                   | Move the current buffer to the top of window                                 |
@@ -36,6 +36,7 @@ Plug 'smitajit/bufutils.vim'
 | `:BResizeZoom`                  | Toggle zoom in and zoom out of the current buffer                            |
 | `:BResizeReset`                 | Resets the size of all buffers                                               |
 | `:BRefresh`                     | Refresh the current buffer                                                   |
+| `:BFilePath {relative}`         | Echo file path of current buffer                                             |
 
 ## Options
 

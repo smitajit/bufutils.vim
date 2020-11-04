@@ -4,6 +4,7 @@ BClosePreviews	bufutils.txt	/*BClosePreviews*
 BCloseRetainPrevious	bufutils.txt	/*BCloseRetainPrevious*
 BCloseRight	bufutils.txt	/*BCloseRight*
 BCloseThis	bufutils.txt	/*BCloseThis*
+BFilePath	bufutils.txt	/*BFilePath*
 BHide	bufutils.txt	/*BHide*
 BMoveToBottom	bufutils.txt	/*BMoveToBottom*
 BMoveToLeft	bufutils.txt	/*BMoveToLeft*
@@ -12,6 +13,7 @@ BMoveToTop	bufutils.txt	/*BMoveToTop*
 BOpen	bufutils.txt	/*BOpen*
 BOpenSHorizontal	bufutils.txt	/*BOpenSHorizontal*
 BOpenSVertical	bufutils.txt	/*BOpenSVertical*
+BRefresh	bufutils.txt	/*BRefresh*
 BResizeDecreaseHeight	bufutils.txt	/*BResizeDecreaseHeight*
 BResizeDecreaseWidth	bufutils.txt	/*BResizeDecreaseWidth*
 BResizeFullHeight	bufutils.txt	/*BResizeFullHeight*
